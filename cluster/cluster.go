@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"dz/conf"
+	"redpacket-sweep/conf"
 
 	"github.com/name5566/leaf/log"
 	"github.com/name5566/leaf/network"
@@ -55,7 +55,9 @@ func Destroy() {
 	}
 
 	for _, client := range clients {
-		client.Close()
+		if client != nil {
+			client.Close()
+		}
 	}
 }
 
@@ -77,7 +79,7 @@ func newAgent(conn *network.TCPConn) network.Agent {
 
 func (a *Agent) Run() {
 	// 向集群服务器注册服务
-	a.WriteMsg("RegistServer", map[string]interface{}{"ServerAddr": conf.Server.WSAddr, "ServerName": "DeZhou"})
+	a.WriteMsg("RegistServer", map[string]interface{}{"ServerAddr": conf.Server.WSAddr, "ServerName": conf.Server.ServerName})
 	for {
 		msg, err := a.conn.ReadMsg()
 		if err != nil {
@@ -110,6 +112,7 @@ func (a *Agent) OnClose() {
 	if _, ok := agents.Load(a); ok {
 		agents.Delete(a)
 	}
+	Destroy()
 }
 
 func (a *Agent) WriteMsg(id string, data interface{}) error {

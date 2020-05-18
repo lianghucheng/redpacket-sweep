@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"dz/cluster"
+	"redpacket-sweep/cluster"
 
 	"github.com/name5566/leaf/console"
 	"github.com/name5566/leaf/log"
