@@ -2,10 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d37676a-da0e-4754-b3d2-f055d1bc0163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/cluster.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/cluster.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/redpacket-sweep.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/skeleton.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/cluster.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/sign.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/array.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/util.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/conf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/gametoken-redsweep.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/json.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/external.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/chanrpc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/cluster.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/handler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/module.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/mongodb.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/playerdata.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/redsweep_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/redsweep_room_impl.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/roommatadata.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/user_login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/user_room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/internal/userdata.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamedata/reader.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gate/external.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gate/internal/module.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gate/router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/external.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/internal/handler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/internal/module.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/cluster.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/msg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/msg/room.go" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,107 +50,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/internal/user_login.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-              <folding>
-                <element signature="e#18#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/conf/json.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-              <folding>
-                <element signature="e#14#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/gametoken-redsweep.toml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/util.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="71" column="66" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="66" />
-              <folding>
-                <element signature="e#16#130#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/internal/chanrpc.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msg/msg.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/msg/room.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" selection-start-column="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cluster/cluster.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1172">
-              <caret line="90" column="12" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/internal/userdata.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -166,8 +102,8 @@
         <option value="$PROJECT_DIR$/game/internal/chanrpc.go" />
         <option value="$PROJECT_DIR$/msg/room.go" />
         <option value="$PROJECT_DIR$/common/util.go" />
-        <option value="$PROJECT_DIR$/conf/gametoken-redsweep.toml" />
         <option value="$PROJECT_DIR$/conf/json.go" />
+        <option value="$PROJECT_DIR$/conf/gametoken-redsweep.toml" />
       </list>
     </option>
   </component>
@@ -192,69 +128,6 @@
             </path>
             <path>
               <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="cluster" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="gamedata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="redpacket-sweep" type="462c0819:PsiDirectoryNode" />
-              <item name="msg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="redpacket-sweep" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -268,12 +141,15 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -310,25 +186,33 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="186" y="73" width="771" height="943" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24894515" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24894515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3300371" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.72064275" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32880098" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32880098" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32880098" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -337,6 +221,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/game/internal/cluster.go">
@@ -555,36 +442,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/conf/json.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/util.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="71" column="66" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="66" />
+        <state relative-caret-position="319">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="16" />
           <folding>
-            <element signature="e#16#130#0" expanded="true" />
+            <element signature="e#14#86#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/gametoken-redsweep.toml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="200">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/json.go">
+    <entry file="file://$PROJECT_DIR$/common/util.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="1620">
+          <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
           <folding>
-            <element signature="e#14#86#0" expanded="true" />
+            <element signature="e#16#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#14#215#0" expanded="true" />
           </folding>
         </state>
       </provider>
