@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/name5566/leaf/log"
 	"redpacket-sweep/common"
+	"redpacket-sweep/metadata"
 )
 
 // 房间状态
@@ -30,7 +31,7 @@ type Room interface {
 }
 
 type room struct {
-	state         int
+	status         int
 	roomType      int
 	roomIndex     int
 	number        string // 房号
@@ -63,4 +64,23 @@ func upsertRobotData(id string, update interface{}) {
 			log.Error("upsert %v error: %v", id, err)
 		}
 	}, nil)
+}
+
+//房间类型
+const (
+	_			= iota
+	roomMatching		// 1、十个红包匹配场
+)
+
+type roomRule struct {
+	metadata.RoomMetaData
+}
+
+func roomTypeString(roomType int) string {
+	switch roomType {
+	case roomMatching:
+		return "匹配场"
+	default:
+		return "N/A"
+	}
 }

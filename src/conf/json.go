@@ -3,13 +3,15 @@ package conf
 import (
 	"github.com/BurntSushi/toml"
 	"github.com/name5566/leaf/log"
+	"redpacket-sweep/metadata"
 )
 
 // Config 配置类型
 type PublicConfig struct {
-	CfgLeaf            	CfgLeaf
-	CfgTimeOut         	CfgTimeOut
-	CfgMongoDB			CfgMongoDB
+	CfgLeaf            		CfgLeaf
+	CfgTimeOut         		CfgTimeOut
+	CfgMongoDB				CfgMongoDB
+	CfgMatchRoomMateData	[]CfgMatchRoomMateData
 }
 
 type CfgLeaf struct {
@@ -40,6 +42,10 @@ type CfgMongoDB struct {
 	DBMaxConnNum 	int
 }
 
+type CfgMatchRoomMateData struct {
+	metadata.RoomMetaData
+}
+
 var opts *PublicConfig
 var Server CfgLeaf
 
@@ -59,4 +65,8 @@ func GetCfgTimeout() *CfgTimeOut {
 
 func GetCfgMongoDB() *CfgMongoDB {
 	return &opts.CfgMongoDB
+}
+
+func GetCfgMatchRoomMateData() *[]CfgMatchRoomMateData {
+	return &opts.CfgMatchRoomMateData
 }

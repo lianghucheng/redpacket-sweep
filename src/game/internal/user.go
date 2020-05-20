@@ -92,6 +92,18 @@ func (user *User)inRoom() bool {
 	return userIDRooms[user.userID()] != nil
 }
 
+func (user *User)nickname() string {
+	return user.baseData.userData.Nickname
+}
+
+func (user *User)headimgurl() string {
+	return user.baseData.userData.Headimgurl
+}
+
+func (user *User)chips() int64 {
+	return user.baseData.userData.Chips
+}
+
 func (user *User)systemOff() bool {
 	if !systemOn {
 		log.Debug("系统升级维护中")

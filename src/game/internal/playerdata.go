@@ -17,7 +17,8 @@ type PlayerData struct {
 	offline		bool
 	status 		int
 	gameStatus	int
-
+	carryCoin	int64
+	winCoin		int64
 }
 
 func (data *PlayerData)user() *User {
@@ -36,4 +37,24 @@ func (data *PlayerData)isRoot() bool {
 
 func (data *PlayerData) playing() bool {
 	return data.status == playing
+}
+
+func (data *PlayerData)isRobot() bool {
+	return data.user().isRobot()
+}
+
+func (data *PlayerData)accID() int {
+	return data.user().accID()
+}
+
+func (data *PlayerData)nickname() string  {
+	return data.user().nickname()
+}
+
+func newPlayerData(userID int) *PlayerData {
+	user := userIDUsers[userID]
+	data := new(PlayerData)
+	data.userID = userID
+	data.carryCoin = user.chips()
+	return data
 }
