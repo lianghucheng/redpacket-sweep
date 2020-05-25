@@ -11,6 +11,7 @@ import (
 const (
 	roomIdle = iota // 0
 	roomGame        // 1
+	roomTaken
 )
 
 var (

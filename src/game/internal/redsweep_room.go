@@ -1,27 +1,35 @@
 package internal
 
-import "redpacket-sweep/metadata"
+import "github.com/name5566/leaf/timer"
 
 type RedSweepRoom struct {
 	room
-	userIDPlayerDatas	map[int]*PlayerData
-	metaData 			*roomRule
-	redPacketQueue		[]*RedPacket
-	allPacketQueue		[]*RedPacket
+	userIDPlayerDatas			map[int]*PlayerData
+	rule 						*roomRule
+	redPacketQueue				[]*RedPacket
+	allPacketQueue				[]*RedPacket
+	currentRedpacket 			*RedPacket
+	takenPlayer 				[]*PlayerData
+
+	systemSendRedPacketTimer	*timer.Timer
 }
 
 type RedPacket struct {
 	userID 							int
 	isOpen							bool
-	metadata.RedPacketMetaData
+	Total							int64
+	Quota							int64
+	TakenNum						int
+	Boom 							int
 }
 
-func newRedSweepRoom(metaData *roomRule) *RedSweepRoom {
+func newRedSweepRoom(rule *roomRule) *RedSweepRoom {
 	room := new(RedSweepRoom)
-	room.roomType = metaData.RoomType
-	room.roomIndex = metaData.RoomIndex
+	room.roomType = rule.RoomType
+	room.roomIndex = rule.RoomIndex
 	room.userIPAddrs = make(map[string]bool)
 	room.userIDPlayerDatas = make(map[int]*PlayerData)
+	room.rule = rule
 
 	return room
 }
@@ -42,6 +50,17 @@ func (room *RedSweepRoom) broadcastExclude(msg interface{}, userID int) {
 		if player.userID == userID { // 指定位置的玩家不发消息
 			continue
 		}
+		player.writeMsg(msg)
+	}
+	for _, player := range room.userIDPlayerDatas {
+		if player.userID == -1 { // 给站起围观的玩家发消息
+			player.writeMsg(msg)
+		}
+	}
+}
+
+func (room *RedSweepRoom) broadcast(msg interface{}) {
+	for _, player := range room.userIDPlayerDatas {
 		player.writeMsg(msg)
 	}
 	for _, player := range room.userIDPlayerDatas {

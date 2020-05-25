@@ -12,6 +12,7 @@ type PublicConfig struct {
 	CfgTimeOut         		CfgTimeOut
 	CfgMongoDB				CfgMongoDB
 	CfgMatchRoomMateData	[]CfgMatchRoomMateData
+	CfgCountDown			CfgCountDown
 }
 
 type CfgLeaf struct {
@@ -29,11 +30,15 @@ type CfgLeaf struct {
 	ConnAddrs   	[]string
 	ServerName		string
 	ChipGactRate	int64
+	StayRobotNum    int
+	SegmentRobotRate int
+	SegmentRoomRate  int
 }
 
 type CfgTimeOut struct {
-	HeartbeatTimeout int
-	ConnectTimeout   int
+	HeartbeatTimeout 		int
+	ConnectTimeout   		int
+	SystemSendRedPacket		int
 }
 
 type CfgMongoDB struct {
@@ -44,6 +49,13 @@ type CfgMongoDB struct {
 
 type CfgMatchRoomMateData struct {
 	metadata.RoomMetaData
+}
+
+type CfgCountDown struct {
+	DelayCountDown 			int
+	PlayingCountDown        int
+	IdleCountDown           int
+	SetBoomCountDown        int
 }
 
 var opts *PublicConfig
@@ -69,4 +81,8 @@ func GetCfgMongoDB() *CfgMongoDB {
 
 func GetCfgMatchRoomMateData() *[]CfgMatchRoomMateData {
 	return &opts.CfgMatchRoomMateData
+}
+
+func GetCfgCountDown() *CfgCountDown {
+	return &opts.CfgCountDown
 }

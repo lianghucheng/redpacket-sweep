@@ -69,6 +69,9 @@ func TimeFormat() string {
 }
 
 func TranferChipRate(chips int64) float64 {
+	if chips < 0 {
+		return -Round(float64(-chips) / float64(conf.Server.ChipGactRate), 4)
+	}
 	return Round(float64(chips) / float64(conf.Server.ChipGactRate), 4)
 }
 

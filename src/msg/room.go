@@ -3,6 +3,10 @@ package msg
 func init() {
 	Processor.Register(&C2SL_StartMatch{})
 	Processor.Register(&SL2C_EnterRoom{})
+	Processor.Register(&SL2C_SitDown{})
+	Processor.Register(&SL2C_StandUp{})
+	Processor.Register(&C2SL_ExitRoom{})
+	Processor.Register(&SL2C_ExitRoom{})
 }
 
 type C2SL_StartMatch struct {
@@ -47,6 +51,20 @@ type SL2C_SitDown struct {
 
 type SL2C_StandUp struct {
 	Error		int
-	UserID 		int64
+	AccountID 		int
+	Num			int64
 }
 
+const (
+	SL2C_ExitRoomOK = iota
+	SL2C_ExitRoomGame
+)
+
+type C2SL_ExitRoom struct {
+
+}
+
+type SL2C_ExitRoom struct {
+	Error 		int
+	AccountID 	int
+}

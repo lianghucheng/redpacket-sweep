@@ -62,6 +62,7 @@ func (user *User) logout() {
 func (user *User) onLogout() {
 	userID := user.userID()
 	//todo:玩家在房间中的话，不删除数据。设置离线,return
+	log.Debug("【登出】")
 
 	delete(userIDUsers,userID)
 	user.saveUserData()

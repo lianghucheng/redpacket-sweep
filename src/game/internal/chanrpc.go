@@ -64,5 +64,6 @@ func rpcTokenAuthorize(args []interface{}) {
 		a.Close()
 		return
 	}
+
 	newUser(a).tokenAuthorize(m)
 }

@@ -1,19 +1,21 @@
 package internal
 
-import "redpacket-sweep/metadata"
+import (
+	"github.com/name5566/leaf/log"
+	"redpacket-sweep/metadata"
+)
 
-func (user *User)sendRedPacket(redPacketMetadata *metadata.RedPacketMetaData) {
-	if room, ok := userIDRooms[user.userID()]; !ok {
+func (user *User)sendRedPacket(room *RedSweepRoom, redPacketMetadata *metadata.RedPacketMetaData) {
+	room.stopSystemRedPacket()
+	log.Debug("【发红包】userid:%v", user.userID())
+	room.sendRedPacket(user, room.newRedPacketQueue(user.userID(), redPacketMetadata))
+}
+
+func (user *User)takenRedPacket(room *RedSweepRoom) {
+	if room.status != playing {
+		log.Debug("【还没有人发红包】")
 		return
-	} else {
-		redPacketQueue := make([]*RedPacket, 0)
-		for i := 0; i < redPacketMetadata.Num; i++ {
-			redPacket := new(RedPacket)
-			redPacket.RedPacketMetaData = *redPacketMetadata
-			redPacket.userID = user.userID()
-			redPacketQueue = append(redPacketQueue, redPacket)
-		}
-
-		room.sendRedPacket(redPacketQueue)
 	}
+
+	room.takenRedPacket(user)
 }

@@ -1,23 +1,27 @@
 #-----------------------------------Leaf对应的配置文件-----------------------------------
 [CfgLeaf]
-LogLevel        ="debug" #打印日志的等级
-LogPath         =""      #日志输出目录
-WSAddr          ="0.0.0.0:3665" #websocket服务地址
-TCPAddr         ="0.0.0.0:3555" #tcp服务地址
-MaxConnNum      =20000            #ws的最大连接数
-ConsolePort     =3335            #终端命令端口
-#ConnAddrs       =["192.168.1.201:5000"]  #大厅集群地址
-ServerName      ="RedPacketSweep"
-ChipGactRate    =100000
+    LogLevel        ="debug" #打印日志的等级
+    LogPath         =""      #日志输出目录
+    WSAddr          ="0.0.0.0:3665" #websocket服务地址
+    TCPAddr         ="0.0.0.0:3555" #tcp服务地址
+    MaxConnNum      =20000            #ws的最大连接数
+    ConsolePort     =3335            #终端命令端口
+    #ConnAddrs       =["192.168.1.201:5000"]  #大厅集群地址
+    ServerName      ="RedPacketSweep"
+    ChipGactRate    =100000
+    StayRobotNum   = 10
+    SegmentRobotRate= 40
+    SegmentRoomRate = 80
 #----------------------------------超时设置
 [CfgTimeOut]
-HeartbeatTimeout    = 120  #游戏服和客户端保持心跳的超时时间秒
-ConnectTimeout      = 5 #客户端建立连接操作的时间秒
+    HeartbeatTimeout    = 120   #游戏服和客户端保持心跳的超时时间秒
+    ConnectTimeout      = 5     #客户端建立连接操作的时间秒
+    SystemSendRedPacket = 4     #系统发红包的超时时间
 #----------------------------------MongoDB配置信息
 [CfgMongoDB]
-DBName          ="redpacket_sweep"
-DBUrl           ="mongodb://localhost"
-DBMaxConnNum    =100
+    DBName          ="redpacket_sweep"
+    DBUrl           ="mongodb://localhost"
+    DBMaxConnNum    =100
 #----------------------------------房间元数据
 [[CfgMatchRoomMateData]]
 	Multiple 		=1
@@ -31,7 +35,12 @@ DBMaxConnNum    =100
 	Multiple 		=2
 	MinLimit		=1.0
 	MaxLimit		=50.0
-	RedPacketNum	=10
+	RedPacketNum	=5
 	MaxPlayerNum	=100
 	RoomType        =1
 	RoomIndex       =1
+[CfgCountDown]
+    DelayCountDown          =2
+    PlayingCountDown        =5
+    IdleCountDown           =2
+    SetBoomCountDown        =2

@@ -14,4 +14,5 @@ func init() {
 	msg.Processor.SetRouter(&msg.C2SL_StartMatch{}, game.ChanRPC)
 	msg.Processor.SetRouter(&msg.C2SL_SendRedPacket{}, game.ChanRPC)
 	msg.Processor.SetRouter(&msg.C2SL_TakenRedPacket{}, game.ChanRPC)
+	msg.Processor.SetRouter(&msg.C2SL_ExitRoom{}, game.ChanRPC)
 }

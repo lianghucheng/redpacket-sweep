@@ -1,6 +1,10 @@
 package internal
 
-import "redpacket-sweep/msg"
+import (
+	"github.com/name5566/leaf/log"
+	"redpacket-sweep/conf"
+	"redpacket-sweep/msg"
+)
 
 func (user *User) exitRoom() {
 	userID := user.userID()
@@ -10,6 +14,8 @@ func (user *User) exitRoom() {
 }
 
 func (user *User)createOrMatchingRoom(rule *roomRule) {
+
+
 	if user.enterMatchingRoom(rule) {
 		return
 	}
@@ -19,10 +25,16 @@ func (user *User)createOrMatchingRoom(rule *roomRule) {
 
 func (user *User)enterMatchingRoom(rule *roomRule) bool {
 	for _, room :=range roomNumberRooms {
-		if user.isRobot() && room.robotNum() >= rule.RedPacketNum {
+		player := int64(len(room.userIDPlayerDatas) - room.robotNum())
+		rateNum := rule.MaxPlayerNum * int64(conf.Server.SegmentRoomRate) / 100
+		if !user.isRobot() && rateNum <= player {
+			continue
+		}
+		if user.isRobot() && int64(room.robotNum()) >= rule.MaxPlayerNum / 3 {
 			return false
 		}
-		if *room.metaData == *rule {
+		log.Debug("【metaData】:%v   【rule】:%v", *room, *rule)
+		if *room.rule == *rule {
 			room.Enter(user)
 			return true
 		}
@@ -50,4 +62,12 @@ func (user *User)createRoom(rule *roomRule) {
 
 	roomNumberRooms[number] = room
 	room.Enter(user)
+}
+
+func (user *User)reconnect(room *RedSweepRoom) {
+	user.WriteMsg(&msg.SL2C_EnterRoom{ // 不能使用 player.writeMsg
+		Error:         msg.SL2C_EnterRoom_OK,
+		Desc:          room.desc,
+	})
+	log.Debug("userID: %v 重连进入 %v房: %v, 类型: %v", user.userID(), roomTypeString(room.roomType), room.number, room.roomType)
 }

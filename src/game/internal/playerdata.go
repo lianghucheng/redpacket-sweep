@@ -1,5 +1,11 @@
 package internal
 
+import (
+	"github.com/name5566/leaf/log"
+	"redpacket-sweep/common"
+	"redpacket-sweep/msg"
+)
+
 //玩家状态
 const (
 	waiting = iota
@@ -13,12 +19,14 @@ const (
 )
 
 type PlayerData struct {
-	userID 		int
-	offline		bool
-	status 		int
-	gameStatus	int
-	carryCoin	int64
-	winCoin		int64
+	userID 			int
+	offline			bool
+	status 			int
+	gameStatus		int
+	carryCoin		int64
+	winCoin			int64
+	redPacketNum 	int
+	takenCoin 		int64
 }
 
 func (data *PlayerData)user() *User {
@@ -57,4 +65,21 @@ func newPlayerData(userID int) *PlayerData {
 	data.userID = userID
 	data.carryCoin = user.chips()
 	return data
+}
+
+func (v *PlayerData)calculate(multi int) {
+	winCoin := int64(0)
+	if v.takenCoin > 0 {
+		winCoin = v.takenCoin * 5 / 100
+	} else {
+		winCoin = v.takenCoin
+	}
+
+	v.winCoin += winCoin * int64(multi)
+	log.Debug("【赢的钱】%v", v.winCoin)
+	v.user().userData().Chips += winCoin
+	v.user().saveUserData()
+	v.writeMsg(&msg.SL2C_UpdateChips{
+		Chips:common.TranferChipRate(v.user().chips()),
+	})
 }
